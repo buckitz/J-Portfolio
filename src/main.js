@@ -113,8 +113,8 @@ function checkBreakpoint() {
 
   } else {
     // Computer
-    if (currentModelPath !== "/model/final-computer-model.glb") {
-      loadNewModel("/model/final-computer-model.glb", "screen", "/html/screen.html", { w: 1280, h: 1024 });
+    if (currentModelPath !== "/model/final-computer-model.gltf") {
+      loadNewModel("/model/final-computer-model.gltf", "screen", "/html/screen.html", { w: 1280, h: 1024 });
     }
 
     if (window.innerWidth < 1300) {
@@ -275,10 +275,3 @@ function checkHover() {
   }
 }
 
-fetch("/model/final-computer-model.glb")
-  .then(res => {
-    if (!res.ok) throw new Error("File not found: " + res.status);
-    return res.blob();
-  })
-  .then(blob => console.log("✅ File found:", blob))
-  .catch(err => console.error("❌ File missing:", err));
