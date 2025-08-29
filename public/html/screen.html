@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="/public/css/landing.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+  <div class="logo">
+    <img src="/public/assets/loading screen.png">
+  </div>
+  <div class="work-link">
+    <a href="work.html">works</a>
+  </div>
+  <div class="work-link">
+    <a href="about.html">about</a>
+  </div>
+
+  <script>
+    const clickSfx = new Audio("/public/assets/click.wav");
+
+    function playClickSound() {
+      clickSfx.currentTime = 0;
+      clickSfx.play();
+    }
+
+    document.addEventListener("click", () => {
+      playClickSound();
+    });
+  </script>
+
+</body>
+
+</html>

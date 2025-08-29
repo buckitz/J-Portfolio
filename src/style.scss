@@ -1,0 +1,26 @@
+.computer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+canvas#computer-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.css3d-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; // above canvas
+  pointer-events: none; // OrbitControls still works
+}
+
+.css3d-container iframe {
+  border: none;
+  pointer-events: auto; // iframe content is interactive
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/work.css">
+
+</head>
+
+<body>
+    <div class="heading">
+        <h1>works</h1>
+    </div>
+    <div class="under-works">
+        <div class="work-selection">
+            <button class="dropbtn" onclick="toggleDropdown(this)">year 1 rmit works ▼</button>
+            <div class="dropdown-content">
+                <a href="work-expand-html/dms1-dms2.html"
+                    data-desc="A collection of digital artworks I have done within the course “Digital Media 1” and “Digital Media 2”.">dms1
+                    & dms2</a>
+                <a href="work-expand-html/digital-video.html"
+                    data-desc="A collection of videos and visuals I have done for the course “Digital Video” .">digital
+                    video</a>
+                <a href="work-expand-html/interactive-media.html"
+                    data-desc="A collection of interactive websites I have made for the course “Interactive Media”">interactive
+                    media</a>
+            </div>
+
+            <button class="dropbtn" onclick="toggleDropdown(this)">personal works ▼</button>
+            <div class="dropdown-content">
+                <a href="work-expand-html/commissions.html"
+                    data-desc="Artworks I have done for clients who were interested in my art and design.">commissions</a>
+                <a href="work-expand-html/illustrations.html"
+                    data-desc="Digital artworks I have done and made within my free time.">illustrations</a>
+                <a href="work-expand-html/character-design.html"
+                    data-desc="Some process of my character designing process and the characters I have.">character
+                    designs</a>
+            </div>
+
+            <div>
+
+                <a href="work-expand-html/ib-visual-art.html"
+                    data-desc="A collection of various mix media artworks I have done for the International Baccalaureate degree under Visual Arts.">ib
+                    visual artworks</a>
+
+            </div>
+        </div>
+        <div class="preview">
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(button) {
+            let el = button.nextElementSibling;
+            while (el && !el.classList.contains("dropdown-content")) {
+                el = el.nextElementSibling;
+            }
+            if (el) {
+                el.classList.toggle("show");
+            }
+        }
+
+        // 🔑 grab preview box + all links that have data-desc
+        const previewBox = document.querySelector(".preview");
+        const links = document.querySelectorAll("a[data-desc]");
+
+        // add hover listeners
+        links.forEach(link => {
+            link.addEventListener("mouseenter", () => {
+                const imgSrc = link.getAttribute("data-img");
+                const desc = link.getAttribute("data-desc");
+
+                // only show preview if attributes exist
+                if (imgSrc || desc) {
+                    previewBox.innerHTML = `
+          ${imgSrc ? `<img src="${imgSrc}" alt="Preview">` : ""}
+          ${desc ? `<p>${desc}</p>` : ""}
+        `;
+                }
+            });
+
+            link.addEventListener("mouseleave", () => {
+                previewBox.innerHTML = "";
+            });
+        });
+
+        const clickSfx = new Audio("/public/assets/click.wav");
+
+        function playClickSound() {
+            clickSfx.currentTime = 0;
+            clickSfx.play();
+        }
+
+        document.addEventListener("click", () => {
+            playClickSound();
+        });
+    </script>
+
+
+</body>
+
+</html>

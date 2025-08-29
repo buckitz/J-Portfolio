@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/about.css">
+
+</head>
+
+<body>
+    <div class="heading">
+        <h1>about</h1>
+    </div>
+    <div class="under-about">
+        <div class="my-model">
+            <canvas id="my-model-canvas"></canvas>
+        </div>
+        <div class="about">
+            <h1 id="name">JAY DO</h1>
+            <h2>An artist that explores the limitation of what art and designing can be. I believe by pushing boundaries
+                and exploring what mediums can be mixed together in designs creates something that is beautiful and
+                interesting.</h2>
+            <h1>background</h1>
+            <h2>With a strong foundation in art due to being a Digital Media student along with a International
+                Baccalaureate degree specializing in Visual Arts and English, I have a strong passion for art and
+                design. I find joy through creating and solving creative problems using my skills in different mediums
+                that ranges from traditional and digital art to 3D to interactive medias.</h2>
+        </div>
+    </div>
+    <script type="module" src="/public/js/about.js">
+
+        const clickSfx = new Audio("/public/assets/click.wav");
+
+        function playClickSound() {
+            clickSfx.currentTime = 0;
+            clickSfx.play();
+        }
+
+        document.addEventListener("click", () => {
+            playClickSound();
+        });
+    </script>
+</body>
+
+</html>

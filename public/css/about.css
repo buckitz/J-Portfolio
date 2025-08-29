@@ -1,0 +1,95 @@
+body {
+    overflow-y: hidden;
+}
+
+.heading {
+    border-color: var(--primary-color);
+    border-style: solid;
+    border-width: 0.4rem;
+    padding-left: 1.5rem;
+
+}
+
+.under-about {
+    display: flex;
+    height: 85vh;
+}
+
+.my-model {
+    border-color: var(--primary-color);
+    border-style: solid;
+    border-width: 0.4rem;
+    flex: 1;
+}
+
+.about {
+    border-color: var(--primary-color);
+    border-style: solid;
+    border-width: 0.4rem;
+    flex: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: var(--font-family-2);
+}
+
+#name {
+    font-size: 5rem;
+}
+
+h2 {
+    color: var(--secondary-color);
+}
+
+.scroll-box::-webkit-scrollbar {
+    width: 30px;
+}
+
+.scroll-box::-webkit-scrollbar-track {
+    background: black;
+    border-color: var(--primary-color);
+    border: 1rem;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb:hover {
+    background: var(--third-color);
+}
+
+#my-model-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+@media (max-width: 954px) {
+    .under-about {
+        flex-direction: column;
+        height: 90vh;
+    }
+
+    .my-model {
+        flex: 2;
+    }
+
+    .about {
+        float: 1;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
