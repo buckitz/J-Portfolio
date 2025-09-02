@@ -1,8 +1,8 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import * as THREE from "https://esm.sh/three@0.165.0";
+import { OrbitControls } from "https://esm.sh/three@0.165.0/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "https://esm.sh/three@0.165.0/examples/jsm/loaders/GLTFLoader.js";
+import { EffectComposer } from "https://esm.sh/three@0.165.0/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "https://esm.sh/three@0.165.0/examples/jsm/postprocessing/RenderPass.js";
 
 const canvas = document.querySelector("#my-model-canvas");
 
@@ -81,16 +81,16 @@ function applyTexture(model, meshNames, texturePath) {
 // Loader
 const loader = new GLTFLoader();
 loader.load(
-    '/public/model/my-model.glb',
+    '/model/my-model.glb',
     (gltf) => {
         const model = gltf.scene;
         scene.add(model);
 
         // ✅ Apply your textures
-        applyTexture(model, ["pants"], "/public/model/textures/pants-texture.png");
-        applyTexture(model, ["hair"], "/public/model/textures/hair-texture.png");
-        applyTexture(model, ["head"], "/public/model/textures/face-texture.png");
-        applyTexture(model, ["body"], "/public/model/textures/body-texture.png");
+        applyTexture(model, ["pants"], "/model/textures/pants-texture.png");
+        applyTexture(model, ["hair"], "/model/textures/hair-texture.png");
+        applyTexture(model, ["head"], "/model/textures/face-texture.png");
+        applyTexture(model, ["body"], "/model/textures/body-texture.png");
 
         // Center + scale model
         const box = new THREE.Box3().setFromObject(model);
